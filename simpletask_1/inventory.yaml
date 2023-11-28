@@ -1,6 +1,7 @@
 all:
   vars:
-    ubuntu_image: ubuntu:0.1.0
+    ubuntu_image: ubuntu:latest
   hosts:
     btj-academy:
       ansible_host: 10.184.0.100
+

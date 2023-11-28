@@ -1,7 +1,7 @@
 ---
   - name: menjalankan docker container
-    hosts: btj-academy
-    become: false
+    hosts: all
+    become: true
     tasks:
     - docker_container:
         name: ubuntu-dvn
