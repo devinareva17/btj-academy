@@ -1,0 +1,12 @@
+---
+  - name: menjalankan docker container
+    hosts: btj-academy
+    become: false
+    tasks:
+    - docker_container:
+        name: ubuntu-dvn
+        image: "{{ubuntu_image}}"
+        interactive: true
+        tty: true
+        exposed_ports: '6652'
+                
