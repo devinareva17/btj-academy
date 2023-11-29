@@ -1,0 +1,23 @@
+---  
+  - name: simpletask-2
+    hosts: btj-academy
+    tasks:
+    - name: copy file to server
+      copy:
+        src: /root/btj-academy/btj-academy/simpletask_2
+        dest: "{{vm_path}}"
+    - name: build container image
+      docker_image:
+        name: app-dvn:0.1.0
+        build:
+          path: "{{vm_path}}"
+        source: build
+        state: present
+    - name:  start container
+      docker_container:
+        name: flaskapp-dvnrv
+        image: app-dvn:0.1.0
+        interactive: true
+        tty: true
+        published_ports: '5051:5051'
+        

@@ -1,0 +1,6 @@
+all:
+  vars:
+    vm_path: /home/devinareva/btj-academy/simpletask_2
+  hosts:
+    btj-academy:
+      ansible_host: 10.184.0.100
